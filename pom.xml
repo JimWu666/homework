@@ -64,7 +64,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.cathay.test.CathayJavaTest.CathayJavaTestApplication</mainClass>
+                    <mainClass>com.CathayJavaTest.CathayJavaTestApplication</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>

@@ -1,4 +1,4 @@
-package com.cathay.test.CathayJavaTest;
+package com.CathayJavaTest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

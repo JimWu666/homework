@@ -1,4 +1,4 @@
-package com.cathay.test.CathayJavaTest.service;
+package com.CathayJavaTest.service;
 
 import java.util.HashMap;
 import java.util.Map;

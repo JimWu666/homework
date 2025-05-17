@@ -1,9 +1,9 @@
-package com.cathay.test.CathayJavaTest.controller;
+package com.CathayJavaTest.controller;
 
-import com.cathay.test.CathayJavaTest.persistence.client.CoinDeskResponse;
-import com.cathay.test.CathayJavaTest.persistence.entity.Currency;
-import com.cathay.test.CathayJavaTest.service.CurrencyService;
-import com.cathay.test.CathayJavaTest.service.NewCoinDeskResponse;
+import com.CathayJavaTest.persistence.client.CoinDeskResponse;
+import com.CathayJavaTest.persistence.entity.Currency;
+import com.CathayJavaTest.service.CurrencyService;
+import com.CathayJavaTest.service.NewCoinDeskResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

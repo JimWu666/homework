@@ -1,4 +1,4 @@
-package com.cathay.test.CathayJavaTest;
+package com.CathayJavaTest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.cathay.test.CathayJavaTest.persistence.client;
+package com.CathayJavaTest.persistence.client;
 
 
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ public class CoinDeskClient {
     }
 
     public CoinDeskResponse getCoinDeskData() {
-        ResponseEntity<CoinDeskResponse> response = restTemplate.getForEntity(URL, CoinDeskResponse.class);
+        ResponseEntity<CoinDeskResponse> response = this.restTemplate.getForEntity(URL, CoinDeskResponse.class);
         return response.getBody();
     }
 }

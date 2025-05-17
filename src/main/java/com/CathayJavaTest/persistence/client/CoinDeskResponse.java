@@ -1,4 +1,4 @@
-package com.cathay.test.CathayJavaTest.persistence.client;
+package com.CathayJavaTest.persistence.client;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;

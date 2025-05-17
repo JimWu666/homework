@@ -1,4 +1,4 @@
-package com.cathay.test.CathayJavaTest.service.handler;
+package com.CathayJavaTest.service.handler;
 
 public class NotFoundException extends RuntimeException{
 

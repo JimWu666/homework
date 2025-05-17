@@ -1,10 +1,10 @@
-package com.cathay.test.CathayJavaTest.service;
+package com.CathayJavaTest.service;
 
-import com.cathay.test.CathayJavaTest.persistence.client.CoinDeskClient;
-import com.cathay.test.CathayJavaTest.persistence.client.CoinDeskResponse;
-import com.cathay.test.CathayJavaTest.persistence.entity.Currency;
-import com.cathay.test.CathayJavaTest.service.handler.NotFoundException;
-import com.cathay.test.CathayJavaTest.persistence.repository.CurrencyRepository;
+import com.CathayJavaTest.service.handler.NotFoundException;
+import com.CathayJavaTest.persistence.client.CoinDeskClient;
+import com.CathayJavaTest.persistence.client.CoinDeskResponse;
+import com.CathayJavaTest.persistence.entity.Currency;
+import com.CathayJavaTest.persistence.repository.CurrencyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +25,7 @@ public class CurrencyService {
     }
 
     public Currency getCurrencyByCode(String code) {
-        return this.currencyRepository.findByCode(code).orElseThrow(() -> new NotFoundException("Currency Not Found"));
+        return this.currencyRepository.findByCode(code).orElseThrow(() -> new NotFoundException("Currency Code Not Found"));
     }
 
     public Currency addCurrency(Currency currency) {
@@ -72,10 +72,14 @@ public class CurrencyService {
         for (String code : codes) {
 
             // Get Currency code and go Currency Table find correspond chineseCode
-            Currency currency = this.currencyRepository.findByCode(code).orElseThrow(() -> new RuntimeException("Currency Not Found!!!"));
+            Optional<Currency> optionalCurrency = this.currencyRepository.findByCode(code);
 
-            // Set to Map
-            codeToChineseCode.put(code, currency.getChineseCode());
+            // If code not in DataTable then set chineseCode empty
+            if (optionalCurrency.isPresent()) {
+                codeToChineseCode.put(code,optionalCurrency.get().getChineseCode());
+            }else {
+                codeToChineseCode.put(code, "");
+            }
         }
 
         // Set CoinDeskResponse CurrencyInfo
