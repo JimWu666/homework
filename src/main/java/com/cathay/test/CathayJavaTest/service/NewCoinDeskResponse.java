@@ -1,31 +1,36 @@
 package com.cathay.test.CathayJavaTest.service;
 
-import com.cathay.test.CathayJavaTest.persistence.client.CoinDeskResponse;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
+import java.util.HashMap;
 import java.util.Map;
 
 public class NewCoinDeskResponse {
 
     private String updateTime;
 
-    private Map<String, CurrencyInfo> bpi;
+    private Map<String, NewCurrencyInfo> bpi = new HashMap<>();
 
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
+
     public String getUpdateTime() {
         return updateTime;
     }
 
-    public Map<String, CurrencyInfo> getBpi() {
+    public Map<String, NewCurrencyInfo> getBpi() {
         return bpi;
     }
 
-    public static class CurrencyInfo {
+    public static class NewCurrencyInfo {
         private String code;
         private String chineseCode;
         private String rate;
+
+        public NewCurrencyInfo(String code, String chineseCode, String rate) {
+            this.code = code;
+            this.chineseCode = chineseCode;
+            this.rate = rate;
+        }
 
         public String getCode() { return code; }
         public void setCode(String code) { this.code = code; }
