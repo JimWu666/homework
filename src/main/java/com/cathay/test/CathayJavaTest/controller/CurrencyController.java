@@ -1,6 +1,8 @@
 package com.cathay.test.CathayJavaTest.controller;
 
-import com.cathay.test.CathayJavaTest.entity.Currency;
+import com.cathay.test.CathayJavaTest.persistence.client.CoinDeskClient;
+import com.cathay.test.CathayJavaTest.persistence.client.CoinDeskResponse;
+import com.cathay.test.CathayJavaTest.persistence.entity.Currency;
 import com.cathay.test.CathayJavaTest.service.CurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/currency")
 public class CurrencyController {
 
-    private CurrencyService currencyService;
+    private final CurrencyService currencyService;
 
     @Autowired
     public CurrencyController(CurrencyService currencyService) {
@@ -37,5 +39,8 @@ public class CurrencyController {
         return ResponseEntity.noContent().build();
     }
 
-
+    @GetMapping("/coindesk")
+    public ResponseEntity<CoinDeskResponse> getCoinDesk() {
+        return ResponseEntity.ok(this.currencyService.getCoinDeskContent());
+    }
 }

@@ -1,7 +1,7 @@
 CREATE TABLE currency (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    code VARCHAR(50) UNIQUE NOT NULL,
-    chinese_code VARCHAR(50) UNIQUE NOT NULL
+    code VARCHAR(5) UNIQUE NOT NULL,
+    chinese_code VARCHAR(5) UNIQUE NOT NULL
 );
 
 
@@ -10,4 +10,4 @@ INSERT INTO currency (code, chinese_code) VALUES
 ('USD', '美元'),
 ('JPY', '日圓'),
 ('EUR', '歐元'),
-('TWD', '新台幣');
+('NTD', '新台幣');

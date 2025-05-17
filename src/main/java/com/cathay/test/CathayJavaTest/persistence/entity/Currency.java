@@ -1,4 +1,4 @@
-package com.cathay.test.CathayJavaTest.entity;
+package com.cathay.test.CathayJavaTest.persistence.entity;
 
 import javax.persistence.*;
 

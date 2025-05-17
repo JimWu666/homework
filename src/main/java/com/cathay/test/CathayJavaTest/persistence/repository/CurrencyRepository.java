@@ -1,6 +1,6 @@
-package com.cathay.test.CathayJavaTest.repository;
+package com.cathay.test.CathayJavaTest.persistence.repository;
 
-import com.cathay.test.CathayJavaTest.entity.Currency;
+import com.cathay.test.CathayJavaTest.persistence.entity.Currency;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
