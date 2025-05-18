@@ -22,6 +22,16 @@ public class CoinDeskResponse {
     public Map<String, CurrencyInfo> getBpi() { return bpi; }
     public void setBpi(Map<String, CurrencyInfo> bpi) { this.bpi = bpi; }
 
+    @Override
+    public String toString() {
+        return "CoinDeskResponse{" +
+                "time=" + time +
+                ", disclaimer='" + disclaimer + '\'' +
+                ", chartName='" + chartName + '\'' +
+                ", bpi=" + bpi +
+                '}';
+    }
+
     public static class Time {
         private String updated;
         private String updatedISO;
@@ -36,6 +46,16 @@ public class CoinDeskResponse {
 
         public String getUpdatedUk() { return updatedUk; }
         public void setUpdatedUk(String updatedUk) { this.updatedUk = updatedUk; }
+
+
+        @Override
+        public String toString() {
+            return "Time{" +
+                    "updated='" + updated + '\'' +
+                    ", updatedISO='" + updatedISO + '\'' +
+                    ", updatedUk='" + updatedUk + '\'' +
+                    '}';
+        }
     }
 
     public static class CurrencyInfo {
@@ -59,5 +79,16 @@ public class CoinDeskResponse {
 
         public double getRateFloat() { return rateFloat; }
         public void setRateFloat(double rateFloat) { this.rateFloat = rateFloat; }
+
+        @Override
+        public String toString() {
+            return "CurrencyInfo{" +
+                    "code='" + code + '\'' +
+                    ", symbol='" + symbol + '\'' +
+                    ", rate='" + rate + '\'' +
+                    ", description='" + description + '\'' +
+                    ", rateFloat=" + rateFloat +
+                    '}';
+        }
     }
 }

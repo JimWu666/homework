@@ -1,5 +1,6 @@
 package com.CathayJavaTest.service;
 
+import com.CathayJavaTest.persistence.client.NewCoinDeskResponse;
 import com.CathayJavaTest.service.handler.NotFoundException;
 import com.CathayJavaTest.persistence.client.CoinDeskClient;
 import com.CathayJavaTest.persistence.client.CoinDeskResponse;
@@ -94,13 +95,13 @@ public class CurrencyService {
     private String changeDateFormat(String dateFormat) {
 
         // 原始時間字串
-        String inputTime = "Sep 2, 2024 07:07:20 UTC";
+//        String inputTime = "Sep 2, 2024 07:07:20 UTC";
 
         // 定義解析器（使用 Locale.ENGLISH 確保英文月份解析）
         DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("MMM d, yyyy HH:mm:ss z", Locale.ENGLISH);
 
         // 解析時間字串
-        ZonedDateTime zonedDateTime = ZonedDateTime.parse(inputTime, inputFormatter);
+        ZonedDateTime zonedDateTime = ZonedDateTime.parse(dateFormat, inputFormatter);
 
         // 轉換為指定格式
         DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");

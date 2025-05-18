@@ -1,4 +1,4 @@
-package com.CathayJavaTest.service;
+package com.CathayJavaTest.persistence.client;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +19,14 @@ public class NewCoinDeskResponse {
 
     public Map<String, NewCurrencyInfo> getBpi() {
         return bpi;
+    }
+
+    @Override
+    public String toString() {
+        return "NewCoinDeskResponse{" +
+                "updateTime='" + updateTime + '\'' +
+                ", bpi=" + bpi +
+                '}';
     }
 
     public static class NewCurrencyInfo {
@@ -42,5 +50,13 @@ public class NewCoinDeskResponse {
         public String getRate() { return rate; }
         public void setRate(String rate) { this.rate = rate; }
 
+        @Override
+        public String toString() {
+            return "NewCurrencyInfo{" +
+                    "code='" + code + '\'' +
+                    ", chineseCode='" + chineseCode + '\'' +
+                    ", rate='" + rate + '\'' +
+                    '}';
+        }
     }
 }
