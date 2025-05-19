@@ -15,7 +15,7 @@
       Controller : CurrencyController
       GET Method : localhost:8080/currency/newcoindesk
 
-## 測試項目
+## 測試項目 - 相關圖示請至 Test result pic folder
 ### 1. 針對資料轉換相關邏輯作單元測試。
       Test class : CurrencyServiceTest
       Test method : testGetCoinDeskModifiedContent
